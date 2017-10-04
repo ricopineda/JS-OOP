@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title> Ninja Class 2 </title>
+		</head>
+		<body>
+			<script type="text/javascript">
+				
+				function Ninja(name){
+
+
+					this.name = name;
+					this.health = 100;
+					this.speed = 10;
+					this.strength = 10;
+
+					this.sayName = function() {
+						console.log("Name: " + this.name )
+							return this;
+					}
+
+					this.showStats = function() {
+						console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + this.speed + ", Strength: " + this.strength);
+						return this;
+					}
+					this.punch = function(){
+						this.health -= 5
+						console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + this.speed + ", Strength: " + this.strength);
+						return this
+					}
+					this.kick = function(){
+						this.health -= 5
+						console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + this.speed + ", Strength: " + this.strength);
+						return this
+					}
+					this.drinkSake = function(){
+						this.health += 10;
+						console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + this.speed + ", Strength: " + this.strength);
+						return this
+					}
+				}
+
+				const ninja1 = new Ninja("Goemon");
+				ninja1.sayName();
+				ninja1.showStats();
+
+				var blue_ninja = new Ninja("Goemon");
+				var red_ninja = new Ninja("Bill Gates");
+				red_ninja.punch(blue_ninja);
+				blue_ninja.kick(red_ninja).punch(red_ninja);				
+			</script>
+
+		</body>
+	</html>

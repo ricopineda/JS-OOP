@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title> Ninja Class </title>
+		</head>
+		<body>
+			<script type="text/javascript">
+
+				function ninjaConstructor(name){
+
+					var ninja = {}
+
+					ninja.name = name;
+					ninja.health = 100;
+					ninja.speed = 10;
+					ninja.stregth = 10;
+
+					ninja.sayName = function(){
+						console.log("I am a new ninja named" + ninja.name );
+					}
+					ninja.showStats = function(){
+						console.log( ninja.health + " " +  ninja.speed + " " +  ninja.stregth)
+					}
+					return ninja;
+
+				}	
+				var ninja1 = ninjaConstructor("Steve")
+				ninja1.sayName();
+				ninja1.showStats();
+
+				// soulution provided by platform
+				function Ninja(name) {
+						this.name = name;
+						this.health = 100;
+						var speed = 10;
+						var strength = 10;
+
+						this.showStats = function() {
+							console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+							return this;
+						}
+
+						this.punch = function(){
+							this.health -= 5
+							console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+							return this
+						}
+						this.kick = function(){
+							this.health -= 15
+							console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+							return this
+						}
+					}
+
+					Ninja.prototype.sayName = function() {
+						console.log("My name is " + this.name);
+						return this;
+					}
+
+					Ninja.prototype.drinkSake = function(){
+						this.health += 10;
+						return this;
+					}
+
+
+
+					const ninja1 = new Ninja("Goemon");
+					ninja1.sayName();
+					ninja1.showStats();
+
+					var blue_ninja = new Ninja("Goemon");
+					var red_ninja = new Ninja("Bill Gates");
+					red_ninja.punch(blue_ninja);
+					blue_ninja.kick(red_ninja);
+
+
+
+				// solution for ninja 2 provided by playform	
+				
+			    function Ninja(name) {
+						this.name = name;
+						this.health = 100;
+						let speed = 3;
+						let strength = 3;
+
+						this.showStats = function() {
+							console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+							return this;
+						}
+
+						this.kick = function(ninja) {
+							const damage = strength * 5;
+							ninja.health -= damage;
+							console.log(ninja.name + " was kicked by " + this.name + " and lost " + damage + " Health!");
+							return this;
+						}
+					}
+
+					Ninja.prototype.punch = function(ninja) {
+						ninja.health -= 5;
+						console.log(ninja.name + " was punched by " + this.name + " and lost 5 Health!");
+						return this;
+					}
+
+					Ninja.prototype.sayName = function() {
+						console.log("My name is " + this.name);
+						return this;
+					}
+
+					Ninja.prototype.drinkSake = function() {
+						this.health += 10;
+						return this;
+					}
+
+					const blueNinja = new Ninja("Bill Gates");
+					const redNinja = new Ninja("Hyabusa");
+
+					blueNinja.sayName();
+					redNinja.sayName();
+
+					blueNinja.punch(redNinja);
+					redNinja.kick(blueNinja);
+
+					blueNinja.showStats();
+					redNinja.showStats();
+
+
+
+					// var ninja1 = new Ninja("Hyabusa");
+					// ninja1.sayName();
+					// // -> "My ninja name is Hyabusa!"
+					// ninja1.showStats();
+					// // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+				// }
+			</script>
+
+		</body>
+	</html>
+
+
+
+
+
+
+
